@@ -14,9 +14,9 @@
 
 <body>
    
-    <form action="post">
+    <form method="post">
         <div>
-            <label for="username">Enter your Name</label>
+            <label for="username">Enter your Name:</label>
             <input type="text" id="username" name="username" placeholder="Enter your Name" autofocus>
         </div>
         <div>
@@ -27,18 +27,26 @@
         </div>
 
           <div>
-        <h3> Select your City</h3>
+        <h4> Select your City</h4>
             <select name="City">
                 <option value="Noakhali">Noakhali</option>
                 <option value="Dhaka">Dhaka</option>
                 <option value="Cumilla">Cumilla</option>
           </select>
         </div>
+
+         <div>
+            <label for="pincode">Enter your Pincode: </label>
+            <input type="text" id="pincode" name="pincode" placeholder="Enter your Pincode">
+        </div>
+
         <div>
-            <label for="comment">Enter your comment</label>
+            <label for="comment">Enter your comment:</label>
             <br>
             <textarea id="comment" name="comment" rows="3" cols="20"></textarea>
         </div>
+
+          <button type="submit">Submit</button>
       
     </form>
 </body>
