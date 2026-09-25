@@ -138,7 +138,7 @@ body {
     transform: translateX(-50%);
     z-index: 12;
     transition: transform 0.1s linear;
-    border: 2px solid #ccc;
+    border: 2px solid #e40b0b;
 }
 .ai::before {
     content: "";
@@ -171,7 +171,7 @@ body {
 .ladder {
     background-color: #55ff55 !important;
     font-weight: bold;
-    color: white;
+    color: rgb(235, 23, 23);
 }
 /* Diagonal color pattern */
 .color-1 { background-color: #ffcccb; }
