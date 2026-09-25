@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Ludo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="images/dice-icon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Welcome Popup -->
+    <div id="welcome-popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-style1">
+                <div class="popup-style2">
+                    <h1>Welcome to Snake Ludo 🐍🎲</h1>
+                    <p>Enter your nickname to start the game:</p>
+                    <input type="text" id="player-name-input" placeholder="Your name" required>
+                    <button id="start-game-btn">Enter</button>
+                    <p class="dev">Developed by Tasnim Farhan Fahim</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="title"> Snake Ludo <i class="fa-solid fa-dice-five"></i></div>
+    <div class="container">
+        <div class="left">
+            <div class="winner">
+                <img src="images/winner.png" alt="winner image">
+            </div>
+            <div class="bg-image">
+                <img src="images/snake-ladder.png" alt="Background Image">
+            </div>
+            <div id="board"></div>
+        </div>
+
+        <div class="right">
+            <div id="scoreline">
+                <div><span id="player-name-display">Player</span>: <span id="player-score">0</span></div>
+                <div>Machine: <span id="ai-score">0</span></div>
+            </div>
+            <button id="restart-btn" onclick="playAgain()">Restart Game</button>
+
+            <div id="dice-container">
+                <div id="message"></div>
+                <div id="dice">1</div>
+                <button id="roll-btn">Roll Dice</button>
+            </div>
+            <button id="play-again-btn" style="display: none;" onclick="playAgain()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

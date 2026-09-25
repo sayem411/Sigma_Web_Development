@@ -1,0 +1,302 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #333346;
+    margin: 0;
+    padding: 40px 60px;
+}
+.title {
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-color: #000000;
+    padding: 20px;
+    margin: 0px 40px 40px 40px;
+    border-radius: 10px;
+}
+.left {
+    padding: 10px;
+    background-color: #000000;
+}
+.right {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #000000;
+}
+#scoreline {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+#scoreline div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    padding-right:20px;
+    border-radius: 5px;
+}
+#player-score, #ai-score {
+    text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+#player-score {
+    color: blue;
+}
+#ai-score {
+    color: red;
+}
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 75px);
+    grid-template-rows: repeat(10, 75px);
+    gap: 4px;
+    background-color: #000000;
+}
+.bg-image {
+    position: absolute;
+    z-index: 10;
+}
+.winner img{
+    position: absolute;
+    z-index: 11;
+    width: 75px !important;
+    margin-top: -20px;
+}
+.tile {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffffff;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    text-shadow:
+    -2px -2px 0 black,
+     2px -2px 0 black,
+    -2px  2px 0 black,
+     2px  2px 0 black;
+}
+/* Human Piece (Player) */
+.player {
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle at 30% 30%, #4da6ff, #003366);
+    border-radius: 50%; /* head */
+    position: absolute;
+    top: 15px; /* shift upward */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    transition: transform 0.1s linear;
+}
+.player::before {
+    content: "";
+    position: absolute;
+    top: 20px; /* body below head */
+    left: -4px;
+    width: 30px;
+    height: 18px;
+    background: linear-gradient(to bottom, #4da6ff, #002244);
+    border-radius: 6px;
+}
+
+/* Robot Piece (AI) */
+.ai {
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle at 30% 30%, #ff4d4d, #660000);
+    border-radius: 20% / 40%; /* robot head shape */
+    position: absolute;
+    top: 15px; /* shift upward */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    transition: transform 0.1s linear;
+    border: 2px solid #ccc;
+}
+.ai::before {
+    content: "";
+    position: absolute;
+    top: 20px; /* robot body */
+    left: -4px;
+    width: 30px;
+    height: 18px;
+    background: linear-gradient(to bottom, #ff4d4d, #330000);
+    border-radius: 4px;
+}
+.ai::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 4px;
+    height: 4px;
+    background: white; /* left eye */
+    box-shadow: 10px 0 white; /* right eye */
+    border-radius: 50%;
+}
+
+
+.snake {
+    background-color: #ff5555 !important;
+    font-weight: bold;
+    color: white;
+}
+.ladder {
+    background-color: #55ff55 !important;
+    font-weight: bold;
+    color: white;
+}
+/* Diagonal color pattern */
+.color-1 { background-color: #ffcccb; }
+.color-2 { background-color: #b3e5fc; }
+.color-3 { background-color: #c8e6c9; }
+.color-4 { background-color: #fff9c4; }
+.color-5 { background-color: #d1c4e9; }
+#dice-container {
+    margin-top: 60px;
+    text-align: center;
+}
+#dice-container div {
+    margin-bottom: 10px;
+}
+#dice {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 auto;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+#dice.rolling {
+    animation: rollDice 1.5s ease-in-out infinite;
+}
+@keyframes rollDice {
+    0% { transform: rotate(0deg) scale(1); background-color: white; }
+    25% { transform: rotate(90deg) scale(1.2); background-color: #f0f0f0; }
+    50% { transform: rotate(180deg) scale(1); background-color: #e0e0e0; }
+    75% { transform: rotate(270deg) scale(1.2); background-color: #f0f0f0; }
+    100% { transform: rotate(360deg) scale(1); background-color: white; }
+}
+#roll-btn, #play-again-btn, #restart-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+#roll-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#message {
+    margin-top: 10px;
+    font-size:28px;
+    color: #ffffff;
+    height: 100px;
+}
+/* Popup styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.popup-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px 30px;
+    text-align: center;
+    min-width: 800px;
+    border-radius: 50%;
+}
+.popup-style1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 700px;
+    border-radius: 50%;
+}
+.popup-style2 {
+    background-color: rgb(51, 51, 70, 0.9);
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 600px;
+    border-radius: 50%;
+}
+.popup-content h1 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 30px;
+}
+.popup-content p {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.popup-content .dev {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.popup-content input {
+    width: 80%;
+    height: 30px;
+    padding: 8px;
+    font-size: 26px;
+    color: #ffffff;
+    background-color: rgb(51, 51, 70, 0.7);
+    margin-bottom: 10px;
+}
+.popup-content button {
+    width: 40%;
+    padding: 12px 20px;
+    background: #4CAF50;
+    font-size: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
