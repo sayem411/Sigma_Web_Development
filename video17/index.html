@@ -4,68 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Selectors</title>
-    <style>
-        /* Element Selector  */
-        div{
-            /* background-color: red; */
-        }
-
-        /* Class Selector  */
-        .red{
-            background-color: rgb(247, 82, 82);
-        }
-
-        /* Id Selector */
-        #green{
-            background-color: green;
-        }
-
-        /* Child Selectors  */
-        div > p {
-            color: blue;
-            background-color: brown;
-        }
-
-        /* Descendant Selector  */
-        div p {
-            color: blue;
-            background-color: brown;
-        }
-
-        /* Universal Selector */
-        * {
-            margin:0;
-            padding:0;
-        }
-
-        /* Pseudo Selector  */
-        a:visited{
-            color: yellow
-        }
-
-        a:link {
-            color: green;
-        }
-
-        a:active{
-            background-color: red;
-        }
-
-        a:hover{
-            background-color: yellow;
-        }
-
-
-        p:first-child{
-            background-color: aqua;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="one">
         <p>I am first</p>
-        <p>I am second</p>
+        <article>
+            <p style="background-color: rgb(23, 23, 222); color: aqua;">I am Second</p>
+        </article>
     </main>
     <div class="red">
         I am a div

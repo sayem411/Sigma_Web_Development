@@ -1,0 +1,64 @@
+
+    
+      /* Element Selector  */
+        div{
+             background-color: rgb(243, 45, 45); 
+        }
+
+        /* Class Selector  */
+        .red{
+            background-color: rgb(243, 11, 38);
+        }
+
+        /* Id Selector */
+        #green{
+            background-color: rgb(11, 225, 11);
+        }
+
+        /* Child Selectors  */
+        div > p {
+            color: rgb(8, 39, 216);
+            background-color:brown;
+        }
+
+        /* Descendant Selector  */
+        div p {
+            color: #0f0fda;
+            background-color: brown;
+        }
+
+        /* Universal Selector */
+        * {
+            margin: 5px;;
+            padding: 15px;;
+        }
+
+        /* Pseudo Selector  */
+        a:visited{
+            color: yellow
+        }
+
+        a:link {
+            color: rgb(6, 91, 6);
+        }
+
+        a:active{
+            background-color: red;
+        }
+
+        a:hover{
+            background-color: yellow;
+        }
+
+
+        p:first-child{
+            background-color: rgb(15, 249, 249);
+            color: rgb(8, 8, 231);
+        }
+
+   
+main{
+    
+        background-color: rgb(246, 115, 239);
+    
+}
