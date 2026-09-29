@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3e5ce3, #933de9);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.post {
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 28px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(23, 22, 22, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #4242f0;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.post input[type="text"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
+}
+
+.post label {
+  font-size: 13px;
+  color: #666;
+}
+
+.post a {
+  align-self: flex-end;
+  font-size: 13px;
+  color: #667eea;
+  text-decoration: none;
+}
+
+.post a:hover {
+  text-decoration:underline;
+}
+
+.post button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0c30cf;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.post button:hover {
+  background: #5568d3;
+}
+
+.post button:active {
+  transform: scale(0.98);
+}
+</style>
+<body>
+
+<form class="post">
+    <input type="text" id="text" placeholder="Enter your nickname" autofocus>
+    <label type="text" id="text"></label>
+    <a href="password">forget password!</a>
+    <button>Login</button>
+</form>
+
+   
+
+</body>
+</html>
