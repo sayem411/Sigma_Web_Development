@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flat Management</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #b48787;
+            text-align: center;
+        }
+        h1 {
+            background: #4a4343;
+            color: white;
+            padding: 10px;
+        }
+        form {
+            background: rgb(216, 129, 74);
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 8px;
+            width: 90%;
+        }
+        table {
+            margin: auto;
+            background: white;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Flat Management System</h1>
+
+<form id="memberForm">
+    <input type="text" id="name" placeholder="Name" required><br>
+    <input type="number" id="room" placeholder="Room No" required><br>
+    <input type="number" id="rent" placeholder="Rent" required><br>
+    <button type="submit">Add Member</button>
+</form>
+
+<table id="memberTable">
+    <tr>
+        <th>Name</th>
+        <th>Room</th>
+        <th>Rent</th>
+    </tr>
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
