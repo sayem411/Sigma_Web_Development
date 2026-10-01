@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css Variables</title>
+
+      <script>
+        alert("Hi");
+	</script>
     <style>
+        
         body{
-            background: url("imagee.png") no-repeat;
+            background-color: aquamarine;
         }
 
         :root{
-            --color: rgb(100, 95, 100);
-            --seccolor: rgb(231, 164, 246); 
+            --color: rgb(140, 125, 140);
+            --seccolor: rgb(236, 182, 248); 
             --defpad: 23px;
             --defop: 0.4;
             
@@ -26,7 +31,7 @@
         }
 
         ul{
-            display: flex;
+            display:flex;
         }
 
         ul li{
@@ -43,6 +48,7 @@
 
         .container{
             background-color: var(--seccolor);
+            text-shadow: 20px 20px 20px;
         }
 
     </style>
@@ -60,5 +66,7 @@
     <div class="container">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse assumenda qui ad dolorem consequuntur facilis aliquam. Unde sapiente ipsam quaerat, at debitis nesciunt, totam nulla quae ad ipsum veniam sed eligendi rem deserunt quos maiores modi. Illo eaque expedita natus iusto nostrum dolorem quos est.
     </div>
+  
+    
 </body>
 </html>
