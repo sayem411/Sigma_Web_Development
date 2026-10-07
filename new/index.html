@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Student Portal</h1>
+    <p class="sub">Course add koro, tarpor GPA dekho</p>
+
+    <form id="courseForm" novalidate>
+      <h2 id="courseHeading">Course 1</h2>
+
+      <div class="grid">
+        <label>Course Name
+          <input type="text" id="name" required>
+        </label>
+        <label>Course Code
+          <input type="text" id="code" required>
+        </label>
+        <label>Credits
+          <input type="number" id="credit" min="0" step="any" required>
+        </label>
+      </div>
+
+      <h3>Attendance</h3>
+      <div class="grid">
+        <label>Class Taken
+          <input type="number" id="taken" min="0" required>
+        </label>
+        <label>Class Attend
+          <input type="number" id="attend" min="0" required>
+        </label>
+      </div>
+
+      <h3>Marks</h3>
+      <div class="grid">
+        <label>Quiz 1 (max 15)
+          <input type="number" id="q1" min="0" step="any" required>
+        </label>
+        <label>Quiz 2 (max 15)
+          <input type="number" id="q2" min="0" step="any" required>
+        </label>
+        <label>Quiz 3 (max 15)
+          <input type="number" id="q3" min="0" step="any" required>
+        </label>
+        <label>Presentation (max 8)
+          <input type="number" id="presentation" min="0" step="any" required>
+        </label>
+        <label>Assignment (max 5)
+          <input type="number" id="assignment" min="0" step="any" required>
+        </label>
+        <label>Mid (max 25)
+          <input type="number" id="mid" min="0" step="any" required>
+        </label>
+        <label>Final (max 40)
+          <input type="number" id="finalMarks" min="0" step="any" required>
+        </label>
+      </div>
+
+      <p id="error" class="error" hidden></p>
+
+      <div class="actions">
+        <button type="submit">Add Course</button>
+        <button type="button" id="resultBtn" class="secondary">Show Result</button>
+      </div>
+    </form>
+
+    <section id="lastInfo" class="card" hidden></section>
+
+    <section id="resultSection" class="card" hidden>
+      <h2>Result</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>SL</th>
+              <th>Course Code</th>
+              <th>Course Title</th>
+              <th>Credit</th>
+              <th>Grade</th>
+              <th>Grade Point</th>
+            </tr>
+          </thead>
+          <tbody id="resultBody"></tbody>
+        </table>
+      </div>
+      <p class="summary">Total Credit: <strong id="totalCredit">0</strong></p>
+      <p class="summary">GPA: <strong id="gpa">0.00</strong></p>
+      <button type="button" id="resetBtn" class="secondary">Start Over</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
